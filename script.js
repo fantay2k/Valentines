@@ -3,18 +3,18 @@ function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 4 + 6 + "s"; // Between 6-10s for slower movement
+    heart.style.animationDuration = Math.random() * 5 + 6 + "s"; // Between 6-11s
     document.body.appendChild(heart);
     
     setTimeout(() => {
         heart.remove();
-    }, 10000); // Hearts stay visible longer
+    }, 11000); // Hearts last longer
 }
 
-// Create a heart every 700ms (slightly slower)
+// Create a heart every 700ms
 setInterval(createHeart, 700);
 
-// Keep the existing functions for interactions
+// Function for name input
 function checkName() {
     let name = document.getElementById('nameInput').value.trim();
     if (name.toLowerCase() === 'jenny') {
