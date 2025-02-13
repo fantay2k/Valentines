@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Surprise</title>
+    <title>Valentine's Journey</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,6 +12,41 @@
         <input type="text" id="nameInput" placeholder="Enter your name">
         <button onclick="checkName()">Submit</button>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function checkName() {
+            let name = document.getElementById('nameInput').value.trim();
+            if (name.toLowerCase() === 'jenny') {
+                document.getElementById('content').innerHTML = `
+                    <h2>Em đỡ đau bụng chưa?</h2>
+                    <button onclick="nextQuestion()">Có</button>
+                    <button onclick="nextQuestion()">Chưa</button>
+                `;
+            }
+        }
+
+        function nextQuestion() {
+            document.getElementById('content').innerHTML = `
+                <h2>Who do you choose to ask you to be their Valentine?</h2>
+                <button onclick="finalQuestion()">Hau</button>
+                <button onclick="finalQuestion()">Nguyen Minh Hau</button>
+                <button onclick="finalQuestion()">Me</button>
+            `;
+        }
+
+        function finalQuestion() {
+            document.getElementById('content').innerHTML = `
+                <h2>Will you be my Valentine?</h2>
+                <button onclick="finalMessage()">Yes</button>
+                <button onclick="finalMessage()">Yes</button>
+            `;
+        }
+
+        function finalMessage() {
+            document.getElementById('content').innerHTML = `
+                <h2>There might be something waiting for you, why don't you ask your concierge?</h2>
+            `;
+        }
+    </script>
 </body>
 </html>
+
