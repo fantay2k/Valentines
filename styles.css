@@ -4,27 +4,58 @@ body {
     align-items: center;
     height: 100vh;
     background-color: pink;
-    font-family: Arial, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
+    overflow: hidden;
+    position: relative;
 }
 
+/* White container */
 .container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: relative;
 }
 
+/* Buttons */
 button {
     background-color: red;
     color: white;
     border: none;
     padding: 10px 20px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 20px;
+    font-size: 18px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 button:hover {
     background-color: darkred;
+    transform: scale(1.1);
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
+    animation: floatUp 5s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+    }
 }
