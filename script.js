@@ -20,8 +20,8 @@ function checkName() {
     if (name.toLowerCase() === 'jenny') {
         document.getElementById('content').innerHTML = `
             <h2>Em đỡ đau bụng chưa?</h2>
-            <button onclick="nextQuestion()">Có</button>
-            <button onclick="nextQuestion()">Chưa</button>
+            <input type="text" id="stomachInput" placeholder="Type anything">
+            <button onclick="nextQuestion()">Submit</button>
         `;
     }
 }
