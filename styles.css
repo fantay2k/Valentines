@@ -41,11 +41,10 @@ button:hover {
 /* Floating hearts */
 .heart {
     position: absolute;
-    width: 20px;
+    width: 16px;  /* Made slimmer */
     height: 20px;
     background-color: red;
     transform: rotate(-45deg);
-    position: absolute;
     animation: floatUp 10s infinite ease-in-out;
     opacity: 0.9;
 }
@@ -55,19 +54,19 @@ button:hover {
 .heart::after {
     content: "";
     position: absolute;
-    width: 18px;
-    height: 20px;
+    width: 16px;  /* Made slimmer */
+    height: 16px;
     background-color: red;
     border-radius: 50%;
 }
 
 .heart::before {
-    top: -10px;
+    top: -8px;
     left: 0;
 }
 
 .heart::after {
-    left: 10px;
+    left: 8px;
     top: 0;
 }
 
