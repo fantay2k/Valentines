@@ -41,11 +41,11 @@ button:hover {
 /* Floating hearts */
 .heart {
     position: absolute;
-    width: 20px;  /* Back to the original size */
+    width: 20px;
     height: 20px;
     background-color: red;
     transform: rotate(-45deg);
-    animation: floatUp 10s infinite ease-in-out;
+    animation: floatUp 6s infinite ease-in-out;
     opacity: 0.9;
 }
 
@@ -54,30 +54,54 @@ button:hover {
 .heart::after {
     content: "";
     position: absolute;
-    width: 20px;  /* Original size */
+    width: 20px;
     height: 20px;
     background-color: red;
     border-radius: 50%;
 }
 
+/* Fixing heart shape placement */
 .heart::before {
-    top: -10px;  /* Back to original placement */
+    top: -10px;
     left: 0;
 }
 
 .heart::after {
-    left: 10px;  /* Back to original placement */
     top: 0;
+    left: 10px;
 }
 
 /* Floating animation */
 @keyframes floatUp {
     0% {
-        transform: translateY(100vh) rotate(-45deg) scale(0.8);
+        transform: translateY(100vh) rotate(-45deg) scale(1);
         opacity: 1;
     }
     100% {
-        transform: translateY(-10vh) rotate(-45deg) scale(1.2);
+        transform: translateY(-10vh) rotate(-45deg) scale(1);
         opacity: 0;
     }
 }
+
+/* Generating multiple hearts */
+@keyframes generateHearts {
+    0% {
+        transform: translateY(100vh) rotate(-45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(-45deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Creating multiple hearts dynamically */
+.heart:nth-child(1) { left: 10%; animation-duration: 6s; }
+.heart:nth-child(2) { left: 20%; animation-duration: 7s; }
+.heart:nth-child(3) { left: 30%; animation-duration: 8s; }
+.heart:nth-child(4) { left: 40%; animation-duration: 6.5s; }
+.heart:nth-child(5) { left: 50%; animation-duration: 7.5s; }
+.heart:nth-child(6) { left: 60%; animation-duration: 8.5s; }
+.heart:nth-child(7) { left: 70%; animation-duration: 9s; }
+.heart:nth-child(8) { left: 80%; animation-duration: 6.8s; }
+.heart:nth-child(9) { left: 90%; animation-duration: 7.2s; }
