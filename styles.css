@@ -40,33 +40,33 @@ button:hover {
 
 /* Floating hearts */
 .heart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
+    position: fixed;
+    width: 15px;
+    height: 15px;
     background-color: red;
     transform: rotate(-45deg);
     animation: floatUp 6s linear infinite;
     opacity: 0.8;
 }
 
-/* Fixing heart shape */
+/* Heart shape fix */
 .heart::before,
 .heart::after {
     content: "";
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-color: red;
     border-radius: 50%;
 }
 
 .heart::before {
-    top: -10px;
+    top: -7.5px;
     left: 0;
 }
 
 .heart::after {
-    left: 10px;
+    left: 7.5px;
     top: 0;
 }
 
