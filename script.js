@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function generateHearts() {
-    const numHearts = 20; // Number of hearts
+    const numHearts = 20;
     for (let i = 0; i < numHearts; i++) {
         createHeart();
     }
@@ -13,14 +13,14 @@ function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
 
-    heart.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-    heart.style.animationDuration = `${4 + Math.random() * 3}s`; // Random float speed
+    heart.style.left = `${Math.random() * 100}vw`;
+    heart.style.animationDuration = `${4 + Math.random() * 3}s`;
 
     document.body.appendChild(heart);
 
     setTimeout(() => {
-        heart.remove(); // Remove heart after animation completes
-        createHeart(); // Replace with a new heart
+        heart.remove();
+        createHeart();
     }, 7000);
 }
 
