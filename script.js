@@ -1,28 +1,36 @@
-// Function to generate floating hearts
+document.addEventListener("DOMContentLoaded", function () {
+    generateHearts();
+});
+
+function generateHearts() {
+    const numHearts = 20; // Number of hearts
+    for (let i = 0; i < numHearts; i++) {
+        createHeart();
+    }
+}
+
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
+
+    heart.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+    heart.style.animationDuration = `${4 + Math.random() * 3}s`; // Random float speed
+
     document.body.appendChild(heart);
-    
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 4 + 6 + "s"; // Random duration between 6-10s
-    heart.style.width = heart.style.height = Math.random() * 20 + 10 + "px"; // Random heart size
 
     setTimeout(() => {
-        heart.remove();
-    }, 10000); // Remove after animation ends
+        heart.remove(); // Remove heart after animation completes
+        createHeart(); // Replace with a new heart
+    }, 7000);
 }
 
-// Generate a heart every 500ms
-setInterval(createHeart, 500);
-
-// Function for name input
+// Interactive Questions
 function checkName() {
     let name = document.getElementById('nameInput').value.trim();
     if (name.toLowerCase() === 'jenny') {
         document.getElementById('content').innerHTML = `
             <h2>Em đỡ đau bụng chưa?</h2>
-            <input type="text" id="stomachInput" placeholder="Type anything">
+            <input type="text" id="answerInput" placeholder="Type anything">
             <button onclick="nextQuestion()">Submit</button>
         `;
     }
