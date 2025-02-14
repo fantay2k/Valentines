@@ -41,8 +41,8 @@ button:hover {
 /* Floating hearts */
 .heart {
     position: absolute;
-    width: 14px;  /* Slimmer */
-    height: 20px;
+    width: 16px;  /* Slimmer but still good */
+    height: 16px;
     background-color: red;
     transform: rotate(-45deg);
     animation: floatUp 10s infinite ease-in-out;
@@ -54,20 +54,20 @@ button:hover {
 .heart::after {
     content: "";
     position: absolute;
-    width: 14px;  /* Match the slim width */
-    height: 14px;
+    width: 16px;  /* Keep same as main heart for consistency */
+    height: 16px;
     background-color: red;
     border-radius: 50%;
 }
 
 .heart::before {
-    top: -7px; /* Adjusted to fit new width */
-    left: -1px; /* Centered */
+    top: -8px;  /* Adjusted for slimmer hearts */
+    left: 0;
 }
 
 .heart::after {
-    top: -7px; /* Adjusted to fit new width */
-    left: 7px; /* Centered */
+    left: 8px;  /* Adjusted so it connects properly */
+    top: 0;
 }
 
 /* Floating animation */
