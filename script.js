@@ -2,17 +2,19 @@
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 5 + 6 + "s"; // Between 6-11s
     document.body.appendChild(heart);
     
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 4 + 6 + "s"; // Random duration between 6-10s
+    heart.style.width = heart.style.height = Math.random() * 20 + 10 + "px"; // Random heart size
+
     setTimeout(() => {
         heart.remove();
-    }, 11000); // Hearts last longer
+    }, 10000); // Remove after animation ends
 }
 
-// Create a heart every 700ms
-setInterval(createHeart, 700);
+// Generate a heart every 500ms
+setInterval(createHeart, 500);
 
 // Function for name input
 function checkName() {
